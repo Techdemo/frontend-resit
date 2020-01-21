@@ -18,7 +18,7 @@ const fetchMovies = () => {
     console.log("value is leeg");
   } else {
     addLoader()
-    let url = `http://www.omdbapi.com/?t=${value}&apikey=bf3d5b71`
+    let url = `https://www.omdbapi.com/?t=${value}&apikey=bf3d5b71`
     fetch(url)
       .then(data => {
         return data.json();
@@ -40,7 +40,11 @@ const fetchMovies = () => {
   }
 
   const populateMovie = movies => {
-    console.log("movies", movies)
+    const markup =
+    `<article>
+      
+    </article>`
+    document.getElementById
   }
 }
 
