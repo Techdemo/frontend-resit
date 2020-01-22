@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Resit for frontend development course CMD">
   <meta name="author" content="Marcel Fleuren">
-  <title>Frontend development Resit</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Oswald:400,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./main.css">
+  <title>Frontend development Resit</title>
 </head>
   <nav>
-    <ul><a href="contact.html">Contact</a></ul>
-    <ul><a href="saved.html">Saved movies</a></ul>
+    <ul>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="saved.html">Opgeslagen films</a></li>
+    </ul>
   </nav>
   <header>
     <h1>Video searcher</h1>
@@ -20,11 +23,11 @@
 <body>
   <section>
     <article>
-      <h3>Zoek naar een film</h3>
+      <h3>Zoek naar een film!</h3>
       <p>Op deze site kun je op zoek naar een film. Alle films uit de IMDB lijst zijn beschikbaar!</p>
     </article>
     <article>
-      <h3>Sla hem op in je lijst</h3> 
+      <h3>Sla hem op in je lijst!</h3> 
       <p>De films die je leuk lijken kun je opslaan in een mooi lijstje. Te vinden in de menubalk</p>
     </article>
     <article>
@@ -34,21 +37,27 @@
   </section>
   <main>
     <section>
-      <h4>Zoek hier naar je films</h4>
-      <form action="">
-        <fieldset>
-          <legend>Type in the name of your movie</legend>
-          <input type="text" id="value" name="searchMovie" placeholder="Search for title">
-        </fieldset>
-      </form>
-      <button id="clickMe">testing the api</button>
-      <ul id="movieList">
-      </ul>
+      <header>
+        <h4>Zoek hier naar je films</h4>
+        <form onsubmit="fetchMovies(event)">
+          <fieldset>
+            <legend>Vul de naam van de film in</legend>
+            <input type="text" id="value" name="searchMovie" placeholder="Zoek naar film titel">
+            <input id="searchMovie" type="submit" value="zoek film"></input>
+          </fieldset>
+        </form>
+      </header>
+      <section class="movieList" id="movieListSection">
+        <ul id="movieList">
+          <li>
+          </li>
+        </ul>
+      </section>
     </section>
   </main>
   <script src="./script.js"></script>
 </body>
 <footer>
-  <p>en dan komt hier de footer</p>
+  <p>Movie searcher</p>
 </footer>
 </html>

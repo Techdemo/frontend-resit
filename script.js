@@ -3,16 +3,21 @@
 const addLoader = () => {
   const markup =
     `<div id="spinner" class="spinner"></div>`
-      document.getElementById("movieList").insertAdjacentHTML("afterbegin", markup)
+      document.getElementById("movieListSection").insertAdjacentHTML("afterbegin", markup)
 }
 
 const sanitizeLoader = () => {
-  const movieList = document.getElementById("movieList");
+  const movieList = document.getElementById("movieListSection");
   const child = document.getElementById("spinner")
   movieList.removeChild(child)
 }
 
-const fetchMovies = () => {
+const saveMovie = (title) => {
+  console.log("title", title)
+}
+
+const fetchMovies = (event) => {
+  event.preventDefault()
   let value = document.getElementById("value").value;
   if(value=== '') {
     console.log("value is leeg");
@@ -40,12 +45,18 @@ const fetchMovies = () => {
   }
 
   const populateMovie = movies => {
+    console.log("populating movies", movies);
     const markup =
-    `<article>
-      
-    </article>`
-    document.getElementById
+    `<li>
+      <article>
+        <p>Titel: ${movies.Title}</p>
+        <p>Year: ${movies.Year}</p>
+        <p class="released">Year: ${movies.Released}</p>
+        <footer>
+          <button onClick="saveMovie(movies.Title)">Film Opslaan</button>
+        </footer>
+      </article>
+    </li>`
+    document.getElementById("movieList").insertAdjacentHTML("afterbegin", markup)
   }
 }
-
-document.getElementById("clickMe").onclick = fetchMovies;

@@ -28,7 +28,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
 	list-style: none;
@@ -47,38 +47,93 @@ table {
 }
 /* // end of css reset */
 :root {
-  --main-bg-color: #708090;
+  --main-bg-color: #0063d3;
+  --sub-bg-color:  #e6e6e9;
+  --action-bg-color: #ffc917;
+  --dark-text: #003082;
+  --button-bg: #0063d3;
 }
 
 html {
   font-size: 16px;
+  margin: 0;
+}
+body{
+  margin: 0;
 }
 nav { 
   display: flex; 
   justify-content: space-evenly;
+  padding: 1rem;
+  box-shadow: 0 0.125rem 0 0 rgba(7,7,33,.15);
+}
+nav > ul {
+  display: flex;
+  justify-content: space-evenly;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
   width: 100%;
-  padding: 1em;
+}
+nav > ul > li {
+  padding: 1.2rem;
+}
+nav > ul > li > a {
+  text-decoration: none; 
+  color: var(--dark-text);
+  font-family: 'Oswald', sans-serif;
+}
+nav > ul > li:hover{
+  background-color: var(--action-bg-color);
+  transition: all .2s linear;
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+h1, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+}
+p {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.4;
+}
+label {
+  font-family: 'Lato', sans-serif;
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+  color: var(--dark-text);
+}
+legend {
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 1rem;
 }
 h1 {
-  font-size: 2.5rem;
+  font-size: 3.2rem;
   text-transform: uppercase;
   color: white;
 }
 h2 {
-  font-size: 1.5rem;
+  font-size: 2.8rem;
   color: white;
+  font-family: 'Lato', sans-serif;
 }
-nav > ul > li {
-  list-style-type: none;
+h3 {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: var(--dark-text);
 }
-nav > ul > a {
-  text-decoration: none;
+h3:first-child {
+  text-align: center;
+ }
+h4 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: white;
 }
 header { 
   background-color: var(--main-bg-color);
-  height: 17.5rem;
-  width: 100%;
-  padding: 2.5rem;
+  height: 22.5rem;
+  padding: 3.75rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,23 +141,55 @@ header {
 body > section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 2rem;
-  background-color: green;
+  background-color: var(--action-bg-color);
 }
 article { 
-  padding: 1.5rem;
-  width: 10rem;
-  height: 7.5rem;
+  padding: 2rem;
+  width: 12.5rem;
+  height: 12.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: darkgreen;
+  background-color: var(--sub-bg-color);
+  border-radius: 5px;
+  box-shadow: 0 0.225rem 0 0 rgba(7,7,33,.15);
 }
-h3:first-child {
- text-align: center;
- font-size: 1.2rem;
- text-transform: uppercase;
+main > section:first-child {
+  min-height: 42.5rem;
+}
+main > section:first-child > header {
+  background-color: var(--action-bg-color);
+  display: flex; 
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  height: 8.5rem;
+  padding: 1.75rem;
+}
+.formContainer {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+.formContainer > form {
+  grid-column-start: 2;
+  margin-top: 1.75rem;
+}
+fieldset {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+}
+footer {
+  height: 5rem;
+  background-color: var(--main-bg-color);
+  display: flex;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
 }
 .spinner {
   width: 40px;
@@ -112,20 +199,189 @@ h3:first-child {
   -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
   animation: sk-rotateplane 1.2s infinite ease-in-out;
 }
-@-webkit-keyframes sk-rotateplane {
-  0% { -webkit-transform: perspective(120px) }
-  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+#movieList {
+  text-indent: -20px;
 }
+#movieList > li {
+  margin: 0.75rem 0.75rem;
+}
+#movieList > li > article {
+  background-color: white;
+  border: 0.3px solid lightgrey;
+  height: 3.75rem;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem 3.5rem;
+}
+.released {
+  color: grey; 
+  font-size: 0.75rem;
+}
+input[type="text"] {
+  background-color: white;
+  border: 0.5px solid var(--dark-text);
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.5rem;
+  color: var(--dark-text);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  box-shadow: 0 0.125rem 0 0 rgba(7,7,33,.15);
+  margin-bottom: 0.5rem;
+  outline: none;
+}
+input[type="name"], 
+input[type="surname"], 
+input[type="email"] {
+  background-color: white;
+  border: 0.5px solid var(--dark-text);
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.5rem;
+  color: var(--dark-text);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  box-shadow: 0 0.125rem 0 0 rgba(7,7,33,.15);
+  margin-bottom: 0.5rem;
+  outline: none;
+}
+
+input[type="name"]:focus:invalid {
+  border: 1px solid red;
+}
+input[type="surname"]:focus:invalid {
+  border: 1px solid red;
+}
+input[type="email"]:focus:invalid {
+  border: 1px solid red;
+}
+textarea:focus:invalid {
+  border: 1px solid red;
+}
+
+input[type="name"]:focus:valid {
+  border: 1px solid green;
+}
+input[type="surname"]:focus:valid {
+  border: 1px solid green;
+}
+input[type="email"]:focus:valid {
+  border: 1px solid green;
+}
+textarea:focus:valid {
+  border: 1px solid green;
+}
+
+input[type="submit"] {
+  background-color: var(--button-bg);
+  width: auto;
+  margin-left: 1.75rem;
+  padding: .625rem 1.125rem;
+  min-width: 7.5rem;
+  max-width: 15rem;
+  text-align: center;
+  box-shadow: inset 0 -0.125rem 0 #004ba0;
+  transition: box-shadow .15s ease-in-out;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  outline: none;
+}
+input[type="submit"]:hover{
+  cursor: pointer;
+  background-color: var(--dark-text);
+  transition: 0.2s ease-in;
+}
+input[type="submit"]:active{
+  cursor: pointer;
+  background-color: var(--action-bg-color);
+  transition: 0.2s ease-in;
+}
+textarea {
+  background-color: white;
+  font-family: 'Lato', sans-serif;
+  border: 0.5px solid var(--dark-text);
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.5rem;
+  color: var(--dark-text);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  box-shadow: 0 0.125rem 0 0 rgba(7,7,33,.15);
+  margin-bottom: 0.5rem;
+  outline: none;
+}
+
 @keyframes sk-rotateplane {
   0% {
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
   } 50% {
     transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
   } 100% {
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
+}
+/* css for contactform */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+.contactForm {
+  width: 100%; 
+}
+input[type="email"] {
+  background-color: white;
+  border: 0.5px solid var(--dark-text);
+  width: 25%;
+  height: 2.5rem;
+  padding: 0.5rem;
+  color: var(--dark-text);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  box-shadow: 0 0.125rem 0 0 rgba(7,7,33,.15);
+  margin-bottom: 0.5rem;
+  outline: none;
+}
+
+@media only screen and (min-width: 1080px) {
+  .movieList {
+    margin: 0 auto;
+    max-width: 1080px;
+  }
+  body > section {
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  body > section {
+    justify-content: center;
+  }
+}
+article > footer {
+  background-color: white;
+  padding: 0; 
+}
+footer > button {
+  background-color: var(--button-bg);
+  border: none;
+  padding: 1rem;
+  color: white;
+  box-shadow: inset 0 -0.125rem 0 #004ba0;
+  outline: none;
+}
+
+footer > button:hover {
+  cursor: pointer;
+  background-color: var(--dark-text);
+  transition: 0.2s ease-in;
+}
+
+footer > button:active {
+  cursor: pointer;
+  background-color: var(--action-bg-color);
+  transition: 0.2s ease-in;
 }

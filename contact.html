@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Resit for frontend development course CMD">
-  <meta name="author" content="Marcel Fleuren">
-  <title>Frontend development Resit</title>
-  <link rel="stylesheet" href="./main.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Resit for frontend development course CMD">
+    <meta name="author" content="Marcel Fleuren">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Oswald:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <title>Frontend development Resit</title>
+  </head>
   <nav>
-    <ul><a href="saved.html">Contact</a></ul>
-    <ul><a href="contact.html">Contact</a></ul>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="saved.html">Opgeslagen films</a></li>
+    </ul>
   </nav>
   <header>
-    <h1>Contact form</h1>
-    <h2>Neem contact met ons op</h2>
+    <h1>Contact formulier</h1>
+    <h2>Neem contact met ons op als je vragen hebt</h2>
   </header>
-  <section>Dit wordt de pagina met een contact form</section>
-  <script src="./script.js"></script>
-</body>
-<footer>
-  <p>en dan komt hier de footer</p>
-</footer>
+  <body>
+    <main class="formContainer">
+      <form class="contactForm" action="">
+      <fieldset>
+        <label for="email">E-mailadres</label>
+        <input id="email" type="email" placeholder="gebruiker@domein.nl" required>
+      </fieldset>
+      <fieldset>
+        <label for="name">Roepnaam</label>
+        <input id="name" type="name" placeholder="Hoe mogen we je noemen?" required>
+      </fieldset>
+      <fieldset>
+        <label for="passowrdNew">Achternaam</label>
+        <input id="surname" type="surname" placeholder="Wat is uw achternaam?" required>
+      </fieldset>
+      <fieldset>
+        <label id="message" for="message">Bericht</label>
+        <textarea id="message" placeholder="typ hier uw bericht" name="message" rows="10" cols="33" required></textarea>
+      </fieldset>
+      <input type="submit" value="Bericht versturen">
+      </form>
+    </main>
+<script src="./script.js"></script>
+  </body>
 </html>
